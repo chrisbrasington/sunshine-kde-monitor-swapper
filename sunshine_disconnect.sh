@@ -15,5 +15,7 @@ else
     exit 1
 fi
 
-echo "Closing Steam Big Picture..."
+echo "Closing Steam Big Picture and opening library..."
 setsid steam steam://close/bigpicture >/dev/null 2>&1 &
+sleep 1
+setsid steam steam://open/games >/dev/null 2>&1 &
