@@ -1,0 +1,44 @@
+{
+  "env": {
+    "PATH": "$(PATH):$(HOME)/.local/bin"
+  },
+  "apps": [
+    {
+      "name": "Steam Deck Desktop",
+      "image-path": "/home/chris/sunshine/steamdeck.png",
+      "prep-cmd": [
+        {
+          "do": "/home/chris/sunshine/sunshine_connect.sh",
+          "undo": "/home/chris/sunshine/sunshine_disconnect.sh"
+        }
+      ]
+    },
+    {
+      "name": "Desktop",
+      "image-path": "desktop.png"
+    },
+    {
+      "name": "Low Res Desktop",
+      "image-path": "desktop.png",
+      "prep-cmd": [
+        {
+          "do": "xrandr --output HDMI-1 --mode 1920x1080",
+          "undo": "xrandr --output HDMI-1 --mode 1920x1200"
+        }
+      ]
+    },
+    {
+      "name": "Steam Big Picture",
+      "detached": [
+        "setsid steam steam://open/bigpicture"
+      ],
+      "prep-cmd": [
+        {
+          "do": "",
+          "undo": "setsid steam steam://close/bigpicture"
+        }
+      ],
+      "image-path": "steam.png"
+    }
+  ]
+}
