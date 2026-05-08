@@ -4,7 +4,7 @@
   },
   "apps": [
     {
-      "name": "Steam Deck Desktop",
+      "name": " Steam Deck Desktop",
       "image-path": "/home/chris/sunshine/steamdeck.png",
       "prep-cmd": [
         {
