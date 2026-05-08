@@ -14,3 +14,10 @@ else
     echo "Error: kscreen-doctor failed (exit code $?)."
     exit 1
 fi
+
+if grep -q '"BigPictureInForeground"\s*"1"' "$HOME/.steam/registry.vdf" 2>/dev/null; then
+    echo "Closing Steam Big Picture..."
+    setsid steam steam://close/bigpicture >/dev/null 2>&1 &
+else
+    echo "Steam Big Picture not active."
+fi
