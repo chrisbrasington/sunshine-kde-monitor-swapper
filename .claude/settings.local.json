@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(kscreen-doctor -o)",
+      "Bash(kscreen-doctor --help)"
+    ]
+  }
+}

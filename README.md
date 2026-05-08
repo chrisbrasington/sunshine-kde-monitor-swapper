@@ -1,6 +1,8 @@
-# sunshine
+# Sunshine Steam Deck monitor switcher
 
-Sunshine config for streaming a Linux desktop (KDE/Wayland) to a Steam Deck.
+Hook scripts and config for [Sunshine](https://github.com/LizardByte/Sunshine), the open-source game-stream host. Sunshine streams a Linux desktop or game to a Moonlight client (Steam Deck, phone, another PC) over the network — like GeForce Experience GameStream, but self-hosted and Linux-friendly.
+
+This repo adds two things on top of a stock Sunshine install: a connect/disconnect hook that swaps a monitor to a Deck-friendly resolution while streaming and restores it afterward, and an `apps.json` entry that triggers it. Targets KDE Plasma on Wayland (`kscreen-doctor`).
 
 When a stream starts, one monitor gets switched to a Deck-friendly resolution and made primary. When the stream ends, it goes back to normal and another monitor takes over as primary. Steam Big Picture launches on connect if it isn't already running.
 
